@@ -10,7 +10,6 @@ public abstract class Entity {
     protected Handler handler;
     protected float x, y;
     protected int width, height;
-    protected int health;
     protected boolean active = true;
     protected Rectangle bounds;
 
@@ -75,14 +74,6 @@ public abstract class Entity {
 
     public void setHeight(int height) {
         this.height = height;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
     }
 
     public boolean isActive() {
