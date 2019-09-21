@@ -1,4 +1,4 @@
-package entities.statics;
+package entities;
 
 import java.awt.Graphics;
 

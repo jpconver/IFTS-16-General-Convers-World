@@ -1,11 +1,12 @@
-package entities;
+package application;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 
-import entities.creatures.Player;
+import entities.Entity;
+import entities.Player;
 
 public class EntityManager {
 

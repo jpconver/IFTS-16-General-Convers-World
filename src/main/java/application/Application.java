@@ -1,9 +1,8 @@
 package application;
 
-import entities.EntityManager;
-import entities.creatures.Player;
-import entities.statics.Rock;
-import entities.statics.Tree;
+import entities.Player;
+import entities.Rock;
+import entities.Tree;
 
 public class Application {
 

@@ -1,4 +1,4 @@
-package entities.creatures;
+package entities;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

@@ -1,6 +1,4 @@
-package entities.statics;
-
-import entities.Entity;
+package entities;
 
 public abstract class StaticEntity extends Entity {
 
