@@ -1,9 +1,10 @@
-package main;
+package application;
 
 public class Launcher {
 
     public static void main(String[] args) {
-        Game game = new Game("Convers World", 1024, 768);
+        Application.getInstance().init();
+        Game game = new Game();
         game.start();
     }
 

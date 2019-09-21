@@ -3,18 +3,16 @@ package entities;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import main.Handler;
+import application.Application;
 
 public abstract class Entity {
 
-    protected Handler handler;
     protected float x, y;
     protected int width, height;
     protected boolean active = true;
     protected Rectangle bounds;
 
-    public Entity(Handler handler, float x, float y, int width, int height) {
-        this.handler = handler;
+    public Entity(float x, float y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -29,7 +27,7 @@ public abstract class Entity {
     public abstract void die();
 
     public boolean checkEntityCollisions(float xOffset, float yOffset) {
-        for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
+        for (Entity e : Application.getInstance().getEntityManager().getEntities()) {
             if (e.equals(this)) {
                 continue;
             }

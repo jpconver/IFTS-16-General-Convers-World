@@ -1,11 +1,11 @@
 package tiles;
 
-import gfx.Assets;
+import application.Application;
 
 public class RockTile extends Tile {
 
     public RockTile(int id) {
-        super(Assets.stone, id);
+        super(Application.getInstance().getAssets().getStaticAssets().get("stone"), id);
     }
 
     @Override

@@ -1,11 +1,11 @@
 package tiles;
 
-import gfx.Assets;
+import application.Application;
 
 public class DirtTile extends Tile {
 
     public DirtTile(int id) {
-        super(Assets.dirt, id);
+        super(Application.getInstance().getAssets().getStaticAssets().get("dirt"), id);
     }
 
 }

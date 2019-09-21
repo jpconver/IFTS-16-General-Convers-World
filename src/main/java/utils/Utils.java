@@ -1,8 +1,11 @@
 package utils;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class Utils {
 
@@ -29,6 +32,16 @@ public class Utils {
             e.printStackTrace();
             return 0;
         }
+    }
+
+    public static BufferedImage loadImage(String path) {
+        try {
+            return ImageIO.read(Utils.class.getResource(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        return null;
     }
 
 }

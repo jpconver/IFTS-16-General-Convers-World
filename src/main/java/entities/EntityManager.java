@@ -6,11 +6,9 @@ import java.util.Comparator;
 import java.util.Iterator;
 
 import entities.creatures.Player;
-import main.Handler;
 
 public class EntityManager {
 
-    private Handler handler;
     private Player player;
     private ArrayList<Entity> entities;
     private Comparator<Entity> renderSorter = new Comparator<Entity>() {
@@ -22,10 +20,9 @@ public class EntityManager {
         }
     };
 
-    public EntityManager(Handler handler, Player player) {
-        this.handler = handler;
+    public EntityManager(Player player) {
+        this.entities = new ArrayList<Entity>();
         this.player = player;
-        entities = new ArrayList<Entity>();
         addEntity(player);
     }
 
@@ -49,14 +46,6 @@ public class EntityManager {
 
     public void addEntity(Entity e) {
         entities.add(e);
-    }
-
-    public Handler getHandler() {
-        return handler;
-    }
-
-    public void setHandler(Handler handler) {
-        this.handler = handler;
     }
 
     public Player getPlayer() {

@@ -1,4 +1,4 @@
-package display;
+package application;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
@@ -41,6 +41,14 @@ public class Display {
 
     public JFrame getFrame() {
         return frame;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
 }

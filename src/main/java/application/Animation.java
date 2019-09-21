@@ -1,4 +1,4 @@
-package gfx;
+package application;
 
 import java.awt.image.BufferedImage;
 

@@ -1,51 +1,45 @@
-package worlds;
+package application;
 
 import java.awt.Graphics;
 
-import entities.EntityManager;
-import entities.creatures.Player;
-import tiles.*;
+import tiles.Tile;
 import utils.Utils;
-import entities.statics.*;
-import main.Handler;
 
 public class World {
 
-    private Handler handler;
     private int width, height;
     private int spawnX, spawnY;
     private int[][] tiles;
-    private EntityManager entityManager;
 
-    public World(Handler handler, String path) {
-        this.handler = handler;
-        entityManager = new EntityManager(handler, new Player(handler, 100, 100));
+    public World(String path) {
+        /*
         entityManager.addEntity(new Tree(handler, 132, 250));
         entityManager.addEntity(new Rock(handler, 132, 450));
         entityManager.addEntity(new Rock(handler, 350, 300));
         entityManager.addEntity(new Rock(handler, 400, 345));
         entityManager.addEntity(new Tree(handler, 625, 325));
+        */
         loadWorld(path);
-        entityManager.getPlayer().setX(spawnX);
-        entityManager.getPlayer().setY(spawnY);
+        //Application.getInstance().getEntityManager().getPlayer().setX(spawnX);
+        //Application.getInstance().getEntityManager().getPlayer().setY(spawnY);
     }
 
     public void tick() {
-        entityManager.tick();
+        Application.getInstance().getEntityManager().tick();
     }
 
     public void render(Graphics g) {
-        int xStart = (int) Math.max(0, handler.getGameCamera().getxOffset() / Tile.TILEWIDTH);
-        int xEnd = (int) Math.min(width, (handler.getGameCamera().getxOffset() + handler.getWidth()) / Tile.TILEWIDTH + 1);
-        int yStart = (int) Math.max(0, handler.getGameCamera().getyOffset() / Tile.TILEHEIGHT);
-        int yEnd = (int) Math.min(height, (handler.getGameCamera().getyOffset() + handler.getHeight()) / Tile.TILEHEIGHT + 1);
+        int xStart = (int) Math.max(0, Application.getInstance().getCamera().getxOffset() / Tile.TILEWIDTH);
+        int xEnd = (int) Math.min(width, (Application.getInstance().getCamera().getxOffset() + Application.getInstance().getDisplay().getWidth()) / Tile.TILEWIDTH + 1);
+        int yStart = (int) Math.max(0, Application.getInstance().getCamera().getyOffset() / Tile.TILEHEIGHT);
+        int yEnd = (int) Math.min(height, (Application.getInstance().getCamera().getyOffset() + Application.getInstance().getDisplay().getHeight()) / Tile.TILEHEIGHT + 1);
 
         for (int y = yStart; y < yEnd; y++) {
             for (int x = xStart; x < xEnd; x++) {
-                getTile(x, y).render(g, (int) (x * Tile.TILEWIDTH - handler.getGameCamera().getxOffset()), (int) (y * Tile.TILEHEIGHT - handler.getGameCamera().getyOffset()));
+                getTile(x, y).render(g, (int) (x * Tile.TILEWIDTH - Application.getInstance().getCamera().getxOffset()), (int) (y * Tile.TILEHEIGHT - Application.getInstance().getCamera().getyOffset()));
             }
         }
-        entityManager.render(g);
+        Application.getInstance().getEntityManager().render(g);
     }
 
     public Tile getTile(int x, int y) {
@@ -79,18 +73,6 @@ public class World {
 
     public int getHeight() {
         return height;
-    }
-
-    public EntityManager getEntityManager() {
-        return entityManager;
-    }
-
-    public Handler getHandler() {
-        return handler;
-    }
-
-    public void setHandler(Handler handler) {
-        this.handler = handler;
     }
 
 }

@@ -1,7 +1,7 @@
 package entities.creatures;
 
+import application.Application;
 import entities.Entity;
-import main.Handler;
 import tiles.Tile;
 
 public abstract class Creature extends Entity {
@@ -12,8 +12,8 @@ public abstract class Creature extends Entity {
     protected float speed;
     protected float xMove, yMove;
 
-    public Creature(Handler handler, float x, float y, int width, int height) {
-        super(handler, x, y, width, height);
+    public Creature(float x, float y, int width, int height) {
+        super(x, y, width, height);
         speed = DEFAULT_SPEED;
         xMove = 0;
         yMove = 0;
@@ -67,7 +67,7 @@ public abstract class Creature extends Entity {
     }
 
     protected boolean collisionWithTile(int x, int y) {
-        return handler.getWorld().getTile(x, y).isSolid();
+        return Application.getInstance().getWorld().getTile(x, y).isSolid();
     }
 
     public float getxMove() {
