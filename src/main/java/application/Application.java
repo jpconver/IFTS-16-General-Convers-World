@@ -2,6 +2,8 @@ package application;
 
 import entities.EntityManager;
 import entities.creatures.Player;
+import entities.statics.Rock;
+import entities.statics.Tree;
 
 public class Application {
 
@@ -23,6 +25,11 @@ public class Application {
         this.display = new Display("ConversWorld", 1024, 768);
         this.player = new Player(100, 100);
         this.entityManager = new EntityManager(player);
+        entityManager.addEntity(new Tree(132, 250));
+        entityManager.addEntity(new Rock(132, 450));
+        entityManager.addEntity(new Rock(350, 300));
+        entityManager.addEntity(new Rock(400, 345));
+        entityManager.addEntity(new Tree(625, 325));
         this.world = new World("res/worlds/world2.txt");
         this.camera = new Camera(0, 0);
         this.keyManager = new KeyManager();

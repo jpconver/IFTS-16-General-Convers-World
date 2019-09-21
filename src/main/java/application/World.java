@@ -8,20 +8,10 @@ import utils.Utils;
 public class World {
 
     private int width, height;
-    private int spawnX, spawnY;
     private int[][] tiles;
 
     public World(String path) {
-        /*
-        entityManager.addEntity(new Tree(handler, 132, 250));
-        entityManager.addEntity(new Rock(handler, 132, 450));
-        entityManager.addEntity(new Rock(handler, 350, 300));
-        entityManager.addEntity(new Rock(handler, 400, 345));
-        entityManager.addEntity(new Tree(handler, 625, 325));
-        */
         loadWorld(path);
-        //Application.getInstance().getEntityManager().getPlayer().setX(spawnX);
-        //Application.getInstance().getEntityManager().getPlayer().setY(spawnY);
     }
 
     public void tick() {
@@ -57,8 +47,6 @@ public class World {
         String[] tokens = file.split("\\s+");
         width = Utils.parseInt(tokens[0]);
         height = Utils.parseInt(tokens[1]);
-        spawnX = Utils.parseInt(tokens[2]);
-        spawnY = Utils.parseInt(tokens[3]);
         tiles = new int[width][height];
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
