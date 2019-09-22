@@ -37,7 +37,7 @@ public class Application {
         this.display = new Display("ConversWorld", 800, 600);
         this.player = new Player(100, 100);
         this.entityManager = new EntityManager(player);
-        this.world = new World("res/worlds/world1.txt");
+        this.world = new World("res/worlds/world.txt");
         this.camera = new Camera(0, 0);
         this.keyManager = new KeyManager();
         this.display.getFrame().addKeyListener(keyManager);
