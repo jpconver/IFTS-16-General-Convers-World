@@ -2,6 +2,11 @@ package application;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * The SpriteSheet class holds a BufferedImage of a sprite sheet and has utility methods to get sprites from it
+ * @author jpconver
+ *
+ */
 public class SpriteSheet {
 
     private BufferedImage sheet;

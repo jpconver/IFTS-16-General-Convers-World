@@ -4,6 +4,12 @@ import application.Application;
 import entities.Entity;
 import tiles.Tile;
 
+/**
+ * The creature class is a type of entity that can move
+ *
+ * @author jpconver
+ *
+ */
 public abstract class Creature extends Entity {
 
     public static final float DEFAULT_SPEED = 3.0f;

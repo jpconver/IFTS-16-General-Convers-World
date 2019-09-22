@@ -8,6 +8,12 @@ import java.util.Iterator;
 import entities.Entity;
 import entities.live.Player;
 
+/**
+ * The EntityManager class is in charge of updating and rendering Entity subclasses
+ *
+ * @author jpconver
+ *
+ */
 public class EntityManager {
 
     private Player player;

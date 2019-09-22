@@ -5,6 +5,12 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+/**
+ * The Display class is a holder for a JFrame and a Canvas to display graphics
+ *
+ * @author jpconver
+ *
+ */
 public class Display {
 
     private JFrame frame;

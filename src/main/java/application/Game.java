@@ -3,6 +3,12 @@ package application;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
+/**
+ * The Game class is responsible for executing the main loop of the game and call the tick and render methods
+ * of related objects at a constant time
+ * @author jpconver
+ *
+ */
 public class Game implements Runnable {
 
     private boolean running;

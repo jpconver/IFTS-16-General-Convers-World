@@ -8,6 +8,12 @@ import java.util.Map;
 
 import utils.Utils;
 
+/**
+ * The Assets class provides BufferedImage sprites of a sprite sheet
+ *
+ * @author jpconver
+ *
+ */
 public class Assets {
 
     private Map<String, SpriteSheet> sheets;

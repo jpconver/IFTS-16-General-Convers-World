@@ -5,6 +5,13 @@ import java.awt.Rectangle;
 
 import application.Application;
 
+/**
+ * The class Entity has the basic functionality of all entities in the Game
+ * An "Entity" is something that is over a map and can collide
+ *
+ * @author jpconver
+ *
+ */
 public abstract class Entity {
 
     protected float x, y;

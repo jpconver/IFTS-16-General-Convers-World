@@ -6,6 +6,12 @@ import java.awt.image.BufferedImage;
 import application.Animation;
 import application.Application;
 
+/**
+ * The enemy class extends a Creature and add custom functionality for enemies
+ *
+ * @author jpconver
+ *
+ */
 public class Enemy extends Creature {
 
     private Animation animDown, animUp, animLeft, animRight;

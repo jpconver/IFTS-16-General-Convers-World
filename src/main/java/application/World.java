@@ -5,6 +5,12 @@ import java.awt.Graphics;
 import tiles.Tile;
 import utils.Utils;
 
+/**
+ * The world class holds information of the tiles that conform the map of the game.
+ * It delegate the tick() calls to the EntityManager and it renders the current visible world in the render() method
+ *
+ * @author jpconver
+ */
 public class World {
 
     private int width, height;

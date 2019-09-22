@@ -3,6 +3,12 @@ package application;
 import entities.Entity;
 import tiles.Tile;
 
+/**
+ * The Camera class provide the coordinates (x,y) of the map to render
+ *
+ * @author jpconver
+ *
+ */
 public class Camera {
 
     private float xOffset, yOffset;

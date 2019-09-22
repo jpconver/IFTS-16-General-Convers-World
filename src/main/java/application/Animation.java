@@ -2,6 +2,12 @@ package application;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * The Animation class iterates over an array of images at a defined speed showing the correct animation when the getCurrentFrame() method is called 
+ *
+ * @author jpconver
+ *
+ */
 public class Animation {
 
     private int speed, index;
