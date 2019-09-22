@@ -6,8 +6,9 @@ import tiles.Tile;
 import utils.Utils;
 
 /**
- * The world class holds information of the tiles that conform the map of the game.
- * It delegate the tick() calls to the EntityManager and it renders the current visible world in the render() method
+ * The world class holds information of the tiles that conform the map of the
+ * game. It delegate the tick() calls to the EntityManager and it renders the
+ * current visible world in the render() method
  *
  * @author jpconver
  */
@@ -52,6 +53,22 @@ public class World {
                 tiles[x][y] = Utils.parseInt(tokens[(x + y * width) + 4]);
             }
         }
+    }
+
+    private float getCameraXOffset() {
+        return Application.getInstance().getCamera().getxOffset();
+    }
+
+    private float getCameraYOffset() {
+        return Application.getInstance().getCamera().getyOffset();
+    }
+
+    private int getDisplayWidth() {
+        return Application.getInstance().getDisplay().getWidth();
+    }
+
+    private int getDisplayHeight() {
+        return Application.getInstance().getDisplay().getHeight();
     }
 
     public int getWidth() {
