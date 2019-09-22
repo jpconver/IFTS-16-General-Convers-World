@@ -1,6 +1,7 @@
-package entities;
+package entities.live;
 
 import application.Application;
+import entities.Entity;
 import tiles.Tile;
 
 public abstract class Creature extends Entity {

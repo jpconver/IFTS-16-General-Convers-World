@@ -1,4 +1,6 @@
-package entities;
+package entities.terrain;
+
+import entities.Entity;
 
 public abstract class StaticEntity extends Entity {
 

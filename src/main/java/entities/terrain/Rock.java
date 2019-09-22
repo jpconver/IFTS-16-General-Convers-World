@@ -1,4 +1,4 @@
-package entities;
+package entities.terrain;
 
 import java.awt.Graphics;
 

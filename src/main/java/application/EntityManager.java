@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 
 import entities.Entity;
-import entities.Player;
+import entities.live.Player;
 
 public class EntityManager {
 
