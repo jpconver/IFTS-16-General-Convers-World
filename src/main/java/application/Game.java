@@ -4,8 +4,9 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 /**
- * The Game class is responsible for executing the main loop of the game and call the tick and render methods
- * of related objects at a constant time
+ * The Game class is responsible for executing the main loop of the game and
+ * call the tick and render methods of related objects at a constant time
+ *
  * @author jpconver
  *
  */
@@ -19,6 +20,10 @@ public class Game implements Runnable {
     public Game() {
     }
 
+    /*
+     * Call tick() and render() methods at a constant framesPerSecond executions per
+     * second
+     */
     @Override
     public void run() {
         int fps = 60;
@@ -53,11 +58,17 @@ public class Game implements Runnable {
         stop();
     }
 
+    /**
+     * call tick methods of keyManager and world
+     */
     private void tick() {
         Application.getInstance().getKeyManager().tick();
         Application.getInstance().getWorld().tick();
     }
 
+    /**
+     * clear the screen and call render method of the world
+     */
     private void render() {
         bs = Application.getInstance().getDisplay().getCanvas().getBufferStrategy();
         if (bs == null) {
@@ -71,6 +82,9 @@ public class Game implements Runnable {
         g.dispose();
     }
 
+    /**
+     * call run method in a new thread
+     */
     public void start() {
         if (running) {
             return;
@@ -80,6 +94,9 @@ public class Game implements Runnable {
         thread.start();
     }
 
+    /**
+     * stop the thread
+     */
     public synchronized void stop() {
         if (!running)
             return;
