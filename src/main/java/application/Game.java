@@ -16,8 +16,10 @@ public class Game implements Runnable {
     private Thread thread;
     private BufferStrategy bs;
     private Graphics g;
+    private int framesPerSecond;
 
-    public Game() {
+    public Game(int framesPerSecond) {
+        this.framesPerSecond = framesPerSecond;
     }
 
     /*
@@ -26,8 +28,7 @@ public class Game implements Runnable {
      */
     @Override
     public void run() {
-        int fps = 60;
-        double timePerTick = 1000000000 / fps;
+        double timePerTick = 1000000000 / framesPerSecond;
         double delta = 0;
         long now;
         long lastTime = System.nanoTime();

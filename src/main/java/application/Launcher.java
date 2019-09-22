@@ -9,6 +9,8 @@ public class Launcher {
         System.setProperty("sun.java2d.opengl", "true");
         Application.getInstance().init();
         Game game = new Game();
+        // Create and start game
+        Game game = new Game(60);
         game.start();
     }
 
