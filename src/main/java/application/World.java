@@ -26,7 +26,8 @@ public class World {
 
         for (int y = yStart; y < yEnd; y++) {
             for (int x = xStart; x < xEnd; x++) {
-                getTile(x, y).render(g, (int) (x * Tile.TILEWIDTH - Application.getInstance().getCamera().getxOffset()), (int) (y * Tile.TILEHEIGHT - Application.getInstance().getCamera().getyOffset()));
+                getTile(x, y).render(g, (int) (x * Tile.TILEWIDTH - Application.getInstance().getCamera().getxOffset()),
+                        (int) (y * Tile.TILEHEIGHT - Application.getInstance().getCamera().getyOffset()));
             }
         }
         Application.getInstance().getEntityManager().render(g);
@@ -37,8 +38,9 @@ public class World {
             return Tile.grassTile;
 
         Tile t = Tile.tiles[tiles[x][y]];
-        if (t == null)
+        if (t == null) {
             return Tile.dirtTile;
+        }
         return t;
     }
 

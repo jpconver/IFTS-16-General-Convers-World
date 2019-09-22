@@ -7,7 +7,7 @@ import application.Animation;
 import application.Application;
 
 public class Enemy extends Creature {
-    
+
     private Animation animDown, animUp, animLeft, animRight;
 
     public Enemy(float x, float y) {
@@ -31,11 +31,11 @@ public class Enemy extends Creature {
         followPlayer();
         move();
     }
-    
+
     private void followPlayer() {
         float playerXPosition = Application.getInstance().getPlayer().getX();
         float playerYPosition = Application.getInstance().getPlayer().getY();
-        
+
         if (playerXPosition == this.getX()) {
             xMove = 0;
         } else if (playerXPosition < this.getX()) {
@@ -43,7 +43,7 @@ public class Enemy extends Creature {
         } else {
             xMove = speed;
         }
-        
+
         if (playerYPosition == this.getY()) {
             yMove = 0;
         } else if (playerYPosition < this.getY()) {
@@ -51,22 +51,21 @@ public class Enemy extends Creature {
         } else {
             yMove = speed;
         }
-        
-        
+
     }
 
     @Override
     public void render(Graphics g) {
         g.drawImage(getCurrentAnimationFrame(), (int) (x - Application.getInstance().getCamera().getxOffset()), (int) (y - Application.getInstance().getCamera().getyOffset()), width, height, null);
-        
+
     }
 
     @Override
     public void die() {
         // TODO Auto-generated method stub
-        
+
     }
-    
+
     private BufferedImage getCurrentAnimationFrame() {
         if (xMove < 0) {
             return animLeft.getCurrentFrame();

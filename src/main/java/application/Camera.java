@@ -53,11 +53,11 @@ public class Camera {
     public void setyOffset(float yOffset) {
         this.yOffset = yOffset;
     }
-    
+
     private int getGameWidth() {
         return Application.getInstance().getDisplay().getWidth();
     }
-    
+
     private int getHameHeight() {
         return Application.getInstance().getDisplay().getHeight();
     }
