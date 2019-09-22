@@ -30,11 +30,11 @@ public class Assets {
         this.sheets.put(key, new SpriteSheet(Utils.loadImage(filePath), spriteWidth, spriteHeight));
     }
 
-    public void addStaticAsset(String key, String sheetKey, int xStart, int yStart, int xEnd, int yEnd) {
+    public void defineStaticAsset(String key, String sheetKey, int xStart, int yStart, int xEnd, int yEnd) {
         this.staticAssets.put(key, sheets.get(sheetKey).getSprite(xStart, yStart, xEnd, yEnd));
     }
 
-    public void addAnimatedAsset(String key, String sheetKey, int xStart, int yStart, int xEnd, int yEnd) {
+    public void defineAnimatedAsset(String key, String sheetKey, int xStart, int yStart, int xEnd, int yEnd) {
         if (!animatedAssets.containsKey(key)) {
             this.animatedAssets.put(key, new ArrayList<BufferedImage>());
         }

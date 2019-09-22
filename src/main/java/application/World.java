@@ -25,29 +25,20 @@ public class World {
     }
 
     public void render(Graphics g) {
-        int xStart = (int) Math.max(0, Application.getInstance().getCamera().getxOffset() / Tile.TILEWIDTH);
-        int xEnd = (int) Math.min(width, (Application.getInstance().getCamera().getxOffset() + Application.getInstance().getDisplay().getWidth()) / Tile.TILEWIDTH + 1);
-        int yStart = (int) Math.max(0, Application.getInstance().getCamera().getyOffset() / Tile.TILEHEIGHT);
-        int yEnd = (int) Math.min(height, (Application.getInstance().getCamera().getyOffset() + Application.getInstance().getDisplay().getHeight()) / Tile.TILEHEIGHT + 1);
-
+        int xStart = (int) Math.max(0, getCameraXOffset() / Tile.TILEWIDTH);
+        int xEnd = (int) Math.min(width, (getCameraXOffset() + getDisplayWidth()) / Tile.TILEWIDTH + 1);
+        int yStart = (int) Math.max(0, getCameraYOffset() / Tile.TILEHEIGHT);
+        int yEnd = (int) Math.min(height, (getCameraYOffset() + getDisplayHeight()) / Tile.TILEHEIGHT + 1);
         for (int y = yStart; y < yEnd; y++) {
             for (int x = xStart; x < xEnd; x++) {
-                getTile(x, y).render(g, (int) (x * Tile.TILEWIDTH - Application.getInstance().getCamera().getxOffset()),
-                        (int) (y * Tile.TILEHEIGHT - Application.getInstance().getCamera().getyOffset()));
+                getTile(x, y).render(g, (int) (x * Tile.TILEWIDTH - getCameraXOffset()), (int) (y * Tile.TILEHEIGHT - getCameraYOffset()));
             }
         }
         Application.getInstance().getEntityManager().render(g);
     }
 
     public Tile getTile(int x, int y) {
-        if (x < 0 || y < 0 || x >= width || y >= height)
-            return Tile.grassTile;
-
-        Tile t = Tile.tiles[tiles[x][y]];
-        if (t == null) {
-            return Tile.dirtTile;
-        }
-        return t;
+        return Application.getInstance().getTiles().getTile(tiles[x][y]);
     }
 
     private void loadWorld(String path) {
