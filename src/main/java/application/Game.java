@@ -99,8 +99,9 @@ public class Game implements Runnable {
      * stop the thread
      */
     public synchronized void stop() {
-        if (!running)
+        if (!running) {
             return;
+        }
         running = false;
         try {
             thread.join();
